@@ -1,21 +1,21 @@
 <script setup lang="ts">
-import { Head, Link } from '@inertiajs/vue3';
-import { Button } from '@/Components/ui/button'
-import { Card, CardDescription, CardFooter, CardHeader, CardTitle, CardContent } from '@/Components/ui/card'
-import ApplicationLogo from '@/Components/ApplicationLogo.vue';
+    import { Head, Link } from '@inertiajs/vue3';
+    import { Button } from '@/Components/ui/button'
+    import { Card, CardDescription, CardHeader, CardTitle, CardContent } from '@/Components/ui/card'
+    import ApplicationLogo from '@/Components/ApplicationLogo.vue';
+    import AnimalCard from '@/Components/AnimalCard.vue';
+    import animals from '@/Lib/data/animals.json'
 
-defineProps<{
-    canLogin?: boolean;
-    laravelVersion: string;
-    phpVersion: string;
-}>();
-
-
+    defineProps<{
+        canLogin?: boolean;
+        laravelVersion: string;
+        phpVersion: string;
+    }>();
 </script>
 
 <template>
     <Head title="Accueil" />
-    <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50 min-h-screen flex justify-center">
+    <div class=" text-black/50 dark:bg-black dark:text-white/50 min-h-screen flex justify-center bg-[url('assets/bg6.jpg')] bg-cover bg-fixed">
         <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
             <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
                 <div class="flex lg:justify-center lg:col-start-2">
@@ -37,17 +37,18 @@ defineProps<{
                     </template>
                 </nav>
             </header>
-            <Card>
+            <Card class="mb-12">
                 <CardHeader>
-                    <CardTitle>Card Title</CardTitle>
-                    <CardDescription>Card Description</CardDescription>
+                    <CardTitle>Bienvenue !</CardTitle>
+                    <CardDescription>Retrouvez ici tous nos animaux en vente.</CardDescription>
                 </CardHeader>
-                <CardContent>
-                    Card Content
+                <CardContent class="flex flex-col">
+
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+                        <AnimalCard v-for="animal in animals" :key="animal.name" :animal="animal" />
+                    </div>
                 </CardContent>
-                <CardFooter>
-                    Card Footer
-                </CardFooter>
             </Card>
         </div>
     </div>
