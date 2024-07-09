@@ -54,9 +54,7 @@ Utilisez la commande suivante pour exécuter les migrations et peupler la base d
 
 Comme il n'y a pas de fonctionnalité de registre sur le site, vous devez créer un utilisateur en utilisant la commande suivante et suivre les instructions :
 
-`bash
-php artisan user:create
-`
+`php artisan user:create`
 
 ## Démarrage du serveur de développement
 
@@ -64,15 +62,11 @@ Pour démarrer le serveur de développement Laravel et le serveur de développem
 
 ### Backend (Laravel)
 
-`bash
-php artisan serve
-`
+`php artisan serve`
 
 ### Frontend (Vite)
 
-`bash
-npm run dev
-`
+`npm run dev`
 
 ou
 
