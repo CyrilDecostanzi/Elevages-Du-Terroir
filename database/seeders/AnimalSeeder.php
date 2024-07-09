@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class AnimalSeeder extends Seeder
@@ -12,6 +11,212 @@ class AnimalSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+
+        // FOR TESTING PURPOSES ONLY
+
+        $animals = [
+            [
+                'name' => 'Bella',
+                'age' => 3,
+                'type_id' => 1,
+                'breed_id' => 1,
+                'description' => 'Labrador amical et énergique, excellent avec les enfants.',
+                'price' => 1500.0,
+                'image' => 'https://images.pexels.com/photos/2832119/pexels-photo-2832119.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            ],
+            [
+                'name' => 'Max',
+                'age' => 4,
+                'type_id' => 1,
+                'breed_id' => 1,
+                'description' => 'Labrador affectueux et joueur, aime les promenades longues.',
+                'price' => 1400.0,
+                'image' => 'https://images.pexels.com/photos/1289556/pexels-photo-1289556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            ],
+            [
+                'name' => 'Lucky',
+                'age' => 2,
+                'type_id' => 1,
+                'breed_id' => 1,
+                'description' => 'Jeune Labrador curieux et intelligent, facile à entraîner.',
+                'price' => 1600.0,
+                'image' => 'https://images.pexels.com/photos/998249/pexels-photo-998249.jpeg'
+            ],
+            [
+                'name' => 'Daisy',
+                'age' => 5,
+                'type_id' => 1,
+                'breed_id' => 1,
+                'description' => 'Labrador doux et calme, parfait pour la compagnie.',
+                'price' => 1300.0,
+                'image' => 'https://images.pexels.com/photos/7210634/pexels-photo-7210634.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            ],
+            [
+                'name' => 'Charlie',
+                'age' => 6,
+                'type_id' => 1,
+                'breed_id' => 1,
+                'description' => 'Labrador loyal et protecteur, excellent chien de famille.',
+                'price' => 1250.0,
+                'image' => 'https://images.pexels.com/photos/15265073/pexels-photo-15265073/free-photo-of-jardin-animal-chien-animal-de-compagnie.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            ],
+            [
+                'name' => 'Thunder',
+                'age' => 4,
+                'type_id' => 2,
+                'breed_id' => 3,
+                'description' => 'Frison majestueux avec une belle crinière, très élégant.',
+                'price' => 8000.0,
+                'image' => 'https://images.pexels.com/photos/19897005/pexels-photo-19897005/free-photo-of-noir-tete-portrait-cheval.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            ],
+            [
+                'name' => 'Star',
+                'age' => 3,
+                'type_id' => 2,
+                'breed_id' => 3,
+                'description' => 'Frison rapide et agile, parfait pour l\'équitation.',
+                'price' => 8500.0,
+                'image' => 'https://images.pexels.com/photos/3755703/pexels-photo-3755703.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            ],
+            [
+                'name' => 'Shadow',
+                'age' => 5,
+                'type_id' => 2,
+                'breed_id' => 3,
+                'description' => 'Frison fort et endurant, idéal pour les compétitions.',
+                'price' => 9000.0,
+                'image' => 'https://images.pexels.com/photos/629139/pexels-photo-629139.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            ],
+            [
+                'name' => 'Blaze',
+                'age' => 6,
+                'type_id' => 2,
+                'breed_id' => 3,
+                'description' => 'Frison expérimenté, excellent pour les cavaliers avancés.',
+                'price' => 9500.0,
+                'image' => 'https://images.pexels.com/photos/1996338/pexels-photo-1996338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            ],
+            [
+                'name' => 'Sky',
+                'age' => 2,
+                'type_id' => 2,
+                'breed_id' => 3,
+                'description' => 'Jeune Frison prometteur, très docile et facile à entraîner.',
+                'price' => 7800.0,
+                'image' => 'https://images.pexels.com/photos/6215840/pexels-photo-6215840.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            ],
+            [
+                'name' => 'Fiona',
+                'age' => 3,
+                'type_id' => 3,
+                'breed_id' => 5,
+                'description' => 'Mérinos avec une laine douce et abondante, très docile.',
+                'price' => 500.0,
+                'image' => 'https://images.pexels.com/photos/18692760/pexels-photo-18692760/free-photo-of-bois-animal-agriculture-ferme.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            ],
+            [
+                'name' => 'Luna',
+                'age' => 2,
+                'type_id' => 3,
+                'breed_id' => 5,
+                'description' => 'Jeune mérinos, laine de haute qualité, très affectueuse.',
+                'price' => 550.0,
+                'image' => 'https://images.pexels.com/photos/2157028/pexels-photo-2157028.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            ],
+            [
+                'name' => 'Oscar',
+                'age' => 4,
+                'type_id' => 3,
+                'breed_id' => 5,
+                'description' => 'Mérinos robuste avec une excellente qualité de laine.',
+                'price' => 600.0,
+                'image' => 'https://images.pexels.com/photos/3384229/pexels-photo-3384229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            ],
+            [
+                'name' => 'Milo',
+                'age' => 5,
+                'type_id' => 3,
+                'breed_id' => 5,
+                'description' => 'Mérinos expérimenté, très calme et facile à gérer.',
+                'price' => 650.0,
+                'image' => 'https://images.pexels.com/photos/15393513/pexels-photo-15393513/free-photo-of-campagne-agriculture-ferme-exploitation-agricole.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            ],
+            [
+                'name' => 'Ella',
+                'age' => 3,
+                'type_id' => 3,
+                'breed_id' => 6,
+                'description' => 'Solognotes avec une laine épaisse, parfaite pour les fils de qualité.',
+                'price' => 620.0,
+                'image' => 'https://images.pexels.com/photos/11010620/pexels-photo-11010620.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            ],
+            [
+                'name' => 'Ginger',
+                'age' => 4,
+                'type_id' => 3,
+                'breed_id' => 6,
+                'description' => 'Solognotes robuste, adaptée aux climats variés, laine dense.',
+                'price' => 580.0,
+                'image' => 'https://images.pexels.com/photos/2681870/pexels-photo-2681870.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            ],
+            [
+                'name' => 'Boris',
+                'age' => 3,
+                'type_id' => 4,
+                'breed_id' => 7,
+                'description' => 'Landrace robuste et en bonne santé.',
+                'price' => 700.0,
+                'image' => 'https://images.pexels.com/photos/7782347/pexels-photo-7782347.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            ],
+            [
+                'name' => 'Toby',
+                'age' => 2,
+                'type_id' => 4,
+                'breed_id' => 7,
+                'description' => 'Jeune landrace avec un bon potentiel de croissance, très sociable.',
+                'price' => 680.0,
+                'image' => 'https://images.pexels.com/photos/7195107/pexels-photo-7195107.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            ],
+            [
+                'name' => 'Duke',
+                'age' => 4,
+                'type_id' => 4,
+                'breed_id' => 7,
+                'description' => 'landrace adulte avec une excellente qualité de viande.',
+                'price' => 720.0,
+                'image' => 'https://images.pexels.com/photos/5610065/pexels-photo-5610065.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            ],
+            [
+                'name' => 'Lily',
+                'age' => 2,
+                'type_id' => 4,
+                'breed_id' => 8,
+                'description' => 'Jeune iberique, très prometteur avec une excellente constitution.',
+                'price' => 760.0,
+                'image' => 'https://images.pexels.com/photos/7782301/pexels-photo-7782301.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            ],
+            [
+                'name' => 'Duke',
+                'age' => 4,
+                'type_id' => 4,
+                'breed_id' => 8,
+                'description' => 'iberique adulte avec une constitution robuste, idéal pour l\'élevage.',
+                'price' => 790.0,
+                'image' => 'https://images.pexels.com/photos/7782977/pexels-photo-7782977.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            ],
+            [
+                'name' => 'Blossom',
+                'age' => 3,
+                'type_id' => 4,
+                'breed_id' => 8,
+                'description' => 'iberique curieux et énergique, excellent pour l\'élevage.',
+                'price' => 750.0,
+                'image' => 'https://images.pexels.com/photos/7854936/pexels-photo-7854936.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+            ]
+        ];
+
+        foreach ($animals as $animal) {
+            \App\Models\Animal::create($animal);
+        }
     }
 }

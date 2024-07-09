@@ -11,7 +11,7 @@ class StoreAnimalRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,8 +21,15 @@ class StoreAnimalRequest extends FormRequest
      */
     public function rules(): array
     {
+
         return [
-            //
+            'name' => ['required', 'string', 'max:255', 'min:3'],
+            'age' => ['required', 'integer', 'min:0'],
+            'description' => ['required', 'string'],
+            'price' => ['required', 'numeric', 'min:0'],
+            'type_id' => ['required', 'integer', 'exists:types,id'],
+            'breed_id' => ['required', 'integer', 'exists:breeds,id'],
+            'image_upload' => ['required', 'image', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048'],
         ];
     }
 }

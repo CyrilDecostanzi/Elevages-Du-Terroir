@@ -1,28 +1,30 @@
 <?php
 
+use App\Http\Controllers\AnimalController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard', [
-        'user' => auth()->user(),
-    ]);
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/', [AnimalController::class, 'index'])->name('animals.index');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', [AnimalController::class, 'adminIndex'], function () {
+        return Inertia::render('Dashboard');
+    })->name('dashboard');
+
+    Route::post('/animals/{id}/switch-sold-status', [AnimalController::class, 'switchSoldStatus'])->name('animals.switch-sold-status');
+    Route::delete('/animals/{id}', [AnimalController::class, 'destroy'])->name('animals.destroy');
+    Route::post('/animals/{id}', [AnimalController::class, 'update'])->name('animals.update');
+    Route::post('/animals', [AnimalController::class, 'store'])->name('animals.store');
 });
 
 require __DIR__ . '/auth.php';
