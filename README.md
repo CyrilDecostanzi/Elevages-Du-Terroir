@@ -2,6 +2,26 @@
 
 Ce projet est un site web réalisé avec Laravel, Inertia.js, Vue.js et Vite. L'objectif de ce projet est de démontrer la mise en œuvre d'une application web moderne en utilisant ces technologies.
 
+## Fonctionnalités
+
+-   Authentification
+-   Gestion du profil utilisateur
+-   Commande artisan pour créer un utilisateur
+-   Gestion des animaux et images associées
+-   Affichage des animaux avec tris et filtres
+
+Versions utilisées :
+
+-   Laravel 11.9
+-   Inertiajs 1.0
+-   Vuejs 3.4.0
+-   Vite 5.0
+
+Design et composants utilisés :
+
+-   Tailwind CSS 3.2.1
+-   Shadcn-vue
+
 ## Prérequis
 
 Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre machine :
@@ -18,7 +38,7 @@ Suivez les étapes ci-dessous pour installer et configurer le projet.
 ### 1. Cloner le dépôt
 
 `git clone <URL_DU_DEPOT>`
-`cd Les_Elevages_du_Terroir`
+`cd Elevages-Du-Terroir`
 
 ### 2. Installer les dépendances backend
 
