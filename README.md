@@ -17,8 +17,8 @@ Suivez les étapes ci-dessous pour installer et configurer le projet.
 
 ### 1. Cloner le dépôt
 
-`git clone <URL_DU_DEPOT>
-cd Les_Elevages_du_Terroir`
+`git clone <URL_DU_DEPOT>`
+`cd Les_Elevages_du_Terroir`
 
 ### 2. Installer les dépendances backend
 
