@@ -97,7 +97,7 @@ const displayedTexts = {
     <DialogTrigger asChild @click="toggleDialog">
       <Button :variant="props.animal ? 'outline' : 'default'">{{ displayedTexts.button }}</Button>
     </DialogTrigger>
-    <DialogScrollContent class="w-full max-w-2xl">
+    <DialogScrollContent class="w-full max-w-3xl">
       <DialogTitle>{{ displayedTexts.title }}</DialogTitle>
       <DialogDescription>
         {{ displayedTexts.description }}
@@ -105,7 +105,7 @@ const displayedTexts = {
        <form @submit.prevent="submitForm" class="mt-6 space-y-3">
         <InputError class="mt-2" :message="form.errors.image_upload" />
           <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <div class="image-container relative rounded-lg overflow-hidden h-64 w-full sm:h-72 sm:w-72 flex-3">
+            <div class="image-container relative rounded-lg overflow-hidden h-64 w-full sm:h-72 sm:w-72">
               <img :src="form.image" alt="animal.name" class="w-full h-full object-cover object-center" />"
               <!-- UPLOAD IMAGE -->
               <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
@@ -124,18 +124,18 @@ const displayedTexts = {
               <div class="flex flex-col gap-2 w-full">
                 <Label for="type">Type</Label>
                 <select v-model="form.type_id" class="input px-4 rounded-lg h-10" @change="handleTypeChange">
-                  <option value="">Select a type</option>
+                  <option value="">Selectionner un type</option>
                   <option v-for="type in types" :key="type.id" :value="type.id">{{ type.name }}</option>
                 </select>
                 <InputError :message="form.errors.type_id" />
-                <Label v-if="form.type_id" for="breed">Breed</Label>
+                <Label v-if="form.type_id" for="breed">Race</Label>
                 <select v-if="form.type_id" v-model="form.breed_id" class="input px-4 rounded-lg h-10"> 
-                  <option value="">Select a breed</option>
+                  <option value="">Selectionner une race</option>
                   <option v-for="breed in filteredBreeds" :key="breed.id" :value="breed.id">{{ breed.name }}</option>
                 </select>
                 <InputError v-if="form.type_id" class="mt-2" :message="form.errors.breed_id" />
                 <div>
-                    <Label for="name">Name</Label>
+                    <Label for="name">Nom</Label>
                     <Input 
                         id="name"
                         type="text"
@@ -149,7 +149,7 @@ const displayedTexts = {
                 </div>
                 <div class="flex gap-4">
                   <div>
-                      <Label for="price">Price</Label>
+                      <Label for="price">Prix TTC en €</Label>
                       <Input 
                           id="price"
                           type="number"

@@ -33,7 +33,7 @@
     const filterProps = {
         form: form,
         types: props.types,
-        breeds: props.breeds.filter((breed: any) => breed.type_id == form.type_id),
+        breeds: props.breeds,
     };
     
     const applyFilters = (reset?: boolean) => {
@@ -76,8 +76,8 @@
             </header>
             <Card class="mb-12">
                 <CardHeader class="p-10 justify-center items-center">
-                    <CardTitle class="text-3xl mb-4">Bienvenue !</CardTitle>
-                    <CardDescription>Retrouvez ici tous les animaux en vente par la ferme. Pour tout achat ou renseignement, n'hésitez pas à nous contacter.</CardDescription>
+                    <CardTitle class="text-3xl mb-4">Bienvenue à la ferme !</CardTitle>
+                    <CardDescription>Retrouvez ici tous les animaux en vente à la ferme. Pour tout achat ou renseignement, n'hésitez pas à nous contacter.</CardDescription>
                     <CardDescription class="font-bold">LES ACHATS SE FONT UNIQUEMENT SUR PLACE, CONTACTEZ-NOUS POUR PLUS D'INFORMATIONS.</CardDescription>
                     <p class="font-bold mt-4 text-3xl">01 23 45 67 89</p>
                 </CardHeader>

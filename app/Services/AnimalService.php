@@ -3,10 +3,10 @@
 namespace App\Services;
 
 use App\Models\Animal;
+use Illuminate\Support\Facades\Storage;
 
 class AnimalService
 {
-
     public function getFilteredAnimals($filters, $sortBy, $sortOrder, $perPage)
     {
         $query = Animal::with('type', 'breed');
@@ -37,6 +37,7 @@ class AnimalService
     public function deleteAnimal($id)
     {
         $animal = Animal::findOrFail($id);
+        $this->deleteImage($animal->image);
         $animal->delete();
     }
 
@@ -48,11 +49,48 @@ class AnimalService
     public function updateAnimal($id, $data)
     {
         $animal = Animal::findOrFail($id);
+
+        // Handle image upload
+        if (isset($data['image_upload'])) {
+            $data['image'] = $this->handleImageUpload($data['image_upload'], $animal->name, $animal->image);
+        }
+
         $animal->update($data);
     }
 
     public function createAnimal($data)
     {
+        if (isset($data['image_upload'])) {
+            $data['image'] = $this->handleImageUpload($data['image_upload'], $data['name']);
+        }
+
         Animal::create($data);
+    }
+
+    public function handleImageUpload($file, $name, $oldImagePath = null)
+    {
+        // Get file with extension
+        $extension = $file->getClientOriginalExtension();
+
+        // Generate a new filename with animal name and current timestamp
+        $filename = $name . '_' . time() . '.' . $extension;
+
+        // Save the file in the public storage disk
+        $filePath = $file->storeAs('images', $filename, 'public');
+
+        // Delete the old image if it exists
+        if ($oldImagePath) {
+            $this->deleteImage($oldImagePath);
+        }
+
+        return Storage::url($filePath);
+    }
+
+    public function deleteImage($imageUrl)
+    {
+        if ($imageUrl) {
+            $imagePath = str_replace('/storage/', '', $imageUrl);
+            Storage::disk('public')->delete($imagePath);
+        }
     }
 }

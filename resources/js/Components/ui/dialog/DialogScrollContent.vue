@@ -46,6 +46,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
         }"
       >
         <slot />
+
       </DialogContent>
     </DialogOverlay>
   </DialogPortal>

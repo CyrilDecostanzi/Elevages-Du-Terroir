@@ -1,66 +1,141 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Les Elevages du Terroir
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Ce projet est un site web réalisé avec Laravel, Inertia.js, Vue.js et Vite. L'objectif de ce projet est de démontrer la mise en œuvre d'une application web moderne en utilisant ces technologies.
 
-## About Laravel
+## Prérequis
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre machine :
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- PHP >= 8.2
+- Composer
+- Node.js >= 18.0.0
+- npm ou yarn
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Installation
 
-## Learning Laravel
+Suivez les étapes ci-dessous pour installer et configurer le projet.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 1. Cloner le dépôt
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+git clone <URL_DU_DEPOT>
+cd Les_Elevages_du_Terroir
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 2. Installer les dépendances backend
 
-### Premium Partners
+\`\`\`bash
+composer install
+\`\`\`
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 3. Installer les dépendances frontend
 
-## Contributing
+\`\`\`bash
+npm install
+# ou
+yarn install
+\`\`\`
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 4. Configurer l'environnement
 
-## Code of Conduct
+Copiez le fichier \`.env.example\` et renommez-le en \`.env\`.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+\`\`\`bash
+cp .env.example .env
+\`\`\`
 
-## Security Vulnerabilities
+Modifiez le fichier \`.env\` si nécessaire avec vos configurations spécifiques.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 5. Générer la clé de l'application
 
-## License
+\`\`\`bash
+php artisan key:generate
+\`\`\`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 6. Mettre en place la base de données
+
+Utilisez la commande suivante pour exécuter les migrations et peupler la base de données avec les données de base :
+
+\`\`\`bash
+php artisan migrate:fresh --seed
+\`\`\`
+
+### 7. Créer un utilisateur
+
+Comme il n'y a pas de fonctionnalité de registre sur le site, vous devez créer un utilisateur en utilisant la commande suivante et suivre les instructions :
+
+\`\`\`bash
+php artisan user:create
+\`\`\`
+
+## Démarrage du serveur de développement
+
+Pour démarrer le serveur de développement Laravel et le serveur de développement Vite, utilisez les commandes suivantes :
+
+### Backend (Laravel)
+
+\`\`\`bash
+php artisan serve
+\`\`\`
+
+### Frontend (Vite)
+
+\`\`\`bash
+npm run dev
+# ou
+yarn dev
+\`\`\`
+
+## Temps de réalisation
+
+Le projet a nécessité environ 4 à 5 jours de travail. En tant que développeur familiarisé avec Laravel et Next.js, mais ayant peu d'expérience avec Vue.js, j'ai pris le temps d'apprendre et d'intégrer Vue.js et Inertia.js dans ce projet. Le processus d'apprentissage et de mise en œuvre a été intensif mais enrichissant, permettant de découvrir et de maîtriser de nouvelles technologies en peu de temps.
+
+## Structure du Projet
+
+Le projet est structuré de manière à séparer les préoccupations backend (Laravel) et frontend (Vue.js). Voici un aperçu de la structure des dossiers :
+
+\`\`\`
+Les_Elevages_du_Terroir/
+├── app/
+├── bootstrap/
+├── config/
+├── database/
+│   ├── factories/
+│   ├── migrations/
+│   ├── seeders/
+│   └── database.sqlite
+├── public/
+├── resources/
+│   ├── css/
+│   ├── js/
+│   └── views/
+├── routes/
+├── storage/
+├── tests/
+├── vendor/
+├── .env
+├── composer.json
+├── package.json
+├── vite.config.js
+└── ...
+\`\`\`
+
+### Points Clés
+
+- **Laravel** gère les aspects backend, y compris l'API et la gestion de la base de données.
+- **Inertia.js** sert de pont entre Laravel et Vue.js, permettant de créer une application SPA (Single Page Application) sans avoir à écrire une API séparée.
+- **Vue.js** est utilisé pour les composants frontend, offrant une expérience utilisateur réactive et moderne.
+- **Vite** est utilisé comme bundler et serveur de développement pour une expérience de développement rapide et moderne.
+- **SQLite** est utilisé comme base de données pour simplifier le développement et l'installation.
+
+## Conclusion
+
+Ce projet démontre comment combiner Laravel, Inertia.js, Vue.js et Vite pour créer une application web moderne et performante. Le choix de ces technologies permet de tirer parti des points forts de chaque outil, offrant ainsi une base solide pour le développement d'applications web.
+
+---
+
+N'hésitez pas à me contacter pour toute question ou clarification sur ce projet. Bonne exploration et développement !
+
+---
+
+Assurez-vous d'ajuster \`<URL_DU_DEPOT>\` en fonction de votre dépôt réel.
