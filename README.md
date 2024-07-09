@@ -22,6 +22,9 @@ Design et composants utilisés :
 -   Tailwind CSS 3.2.1
 -   Shadcn-vue
 
+Base de données :
+-   Sqlite (Pour l'exercice)
+
 ## Prérequis
 
 Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre machine :
