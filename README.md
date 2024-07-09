@@ -74,4 +74,4 @@ ou
 
 ## Temps de réalisation
 
-Le projet a nécessité environ 4 à 5 jours de travail. En tant que développeur familiarisé avec Laravel et Next.js, mais ayant peu d'expérience avec Vue.js, j'ai pris le temps d'apprendre et d'intégrer Vue.js et Inertia.js dans ce projet. Le processus d'apprentissage et de mise en œuvre a été intensif mais enrichissant, permettant de découvrir et de maîtriser de nouvelles technologies en peu de temps.
+Le projet a nécessité environ 4 à 5 jours de travail. En tant que développeur familiarisé avec Laravel et Next.js, mais ayant peu d'expérience avec Vue.js, j'ai pris le temps d'apprendre et d'intégrer Vue.js et Inertia.js dans ce projet.
