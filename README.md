@@ -1,6 +1,6 @@
 # Les Élevages du Terroir
 
-Ce projet est un site web réalisé avec Laravel, Inertia.js, Vue.js et Vite. L'objectif de ce projet est de démontrer la mise en œuvre d'une application web moderne en utilisant ces technologies.
+Ce projet est un site web de vente de betail réalisé avec Laravel, Inertia.js, Vue.js et Vite. L'objectif de ce projet est de démontrer la mise en œuvre d'une application web moderne en utilisant ces technologies.
 
 ## Fonctionnalités
 
